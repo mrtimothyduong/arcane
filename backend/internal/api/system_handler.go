@@ -65,7 +65,7 @@ type SystemHandler struct {
 		sync.RWMutex
 		detected  bool
 		timestamp time.Time
-		gpuType   string // "nvidia", "amd", "intel", "jetson", or ""
+		gpuType   string // "nvidia", "amd", "intel", or ""
 		toolPath  string
 	}
 	detectionDone        bool
@@ -918,4 +918,3 @@ func (h *SystemHandler) parseIntelOutput(ctx context.Context, output []byte) ([]
 	slog.DebugContext(ctx, "Intel GPU detected but detailed stats not yet implemented")
 	return stats, nil
 }
-
